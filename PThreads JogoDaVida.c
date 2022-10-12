@@ -1,3 +1,5 @@
+/* Autor: Felipe Fernandes Mendon√ßa, RA: 111788 */
+
 #define HAVE_STRUCT_TIMESPEC
 
 #include <stdio.h>
@@ -75,14 +77,14 @@ void run_game(void *thread_arg)
                 }
             }
         }
-        // fim da geraÁ„o, nova geraÁ„o se torna a atual para prÛxima iteraÁ„o
+        // fim da gera√ß√£o, nova gera√ß√£o se torna a atual para pr√≥xima itera√ß√£o
         for(i = 0; i < (n * n); i ++)
         {
             y = (i / n);
             x = (i % n);
             grid[y][x] = newGrid[y][x];
         }
-        // geraÁ„o atual atualizada, exibe quantas celulas vivas
+        // gera√ß√£o atual atualizada, exibe quantas celulas vivas
         printf("\n---------GEN %d : %d celulas vivas---------\n", g+1, alive);
 
         pthread_mutex_unlock(&mutex);
@@ -91,16 +93,16 @@ void run_game(void *thread_arg)
 
 int getNeighbors(int **grid, int i, int j, int n)
 {
-    //contador que guardar· a quantidade de cÈlulas vizinhas
+    //contador que guardar√° a quantidade de c√©lulas vizinhas
     int cont = 0;
 
-    //vari·veis de apoio, caso a cÈlula esteja na borda do tabuleiro
+    //vari√°veis de apoio, caso a c√©lula esteja na borda do tabuleiro
     int x1, y1, x2, y2;
 
-//verificaÁıes das extremidades do tabuleiro
-    //1. se a cÈlula est· na borda direita do tabuleiro
-    //2. se n„o 1, verifica se est· na borda esquerda
-    //3. posiÁ„o da coluna ok
+//verifica√ß√µes das extremidades do tabuleiro
+    //1. se a c√©lula est√° na borda direita do tabuleiro
+    //2. se n√£o 1, verifica se est√° na borda esquerda
+    //3. posi√ß√£o da coluna ok
     if(j == (n-1))
     {
         x1 = j - 1;
@@ -117,9 +119,9 @@ int getNeighbors(int **grid, int i, int j, int n)
         x2 = j + 1;
     }
 
-    //4. se a cÈlula est· na borda superior
-    //5. se n„o 4, verifica se est· na borda inferior
-    //6. posiÁ„o da linha ok
+    //4. se a c√©lula est√° na borda superior
+    //5. se n√£o 4, verifica se est√° na borda inferior
+    //6. posi√ß√£o da linha ok
     if(i == 0)
     {
         y1 = n - 1;
@@ -135,9 +137,9 @@ int getNeighbors(int **grid, int i, int j, int n)
         y1 = i - 1;
         y2 = i + 1;
     }
-// fim da verificaÁ„o dos vizinhos da cÈlula
+// fim da verifica√ß√£o dos vizinhos da c√©lula
 
-//conta quantos vizinhos est„o vivos
+//conta quantos vizinhos est√£o vivos
     if(grid[y1][x1] == 1) cont++; // superior esquerdo
     if(grid[y1][x2] == 1) cont++; // superior direito
     if(grid[y1][j]  == 1) cont++; // superior central
@@ -174,7 +176,7 @@ int main()
     printf("Insira a quantidade de geracoes (iteracoes): ");
     scanf("%d", &generations);
 
-    //AlocaÁ„o din‚mica para as matrizes dos tabuleiros
+    //Aloca√ß√£o din√¢mica para as matrizes dos tabuleiros
     grid = (int**) malloc(sizeof(int*) * n);
     newGrid = (int**) malloc(sizeof(int*) * n);
 
