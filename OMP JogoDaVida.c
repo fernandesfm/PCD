@@ -1,3 +1,5 @@
+/* Autor: Felipe Fernandes Mendonça, RA: 111788 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
