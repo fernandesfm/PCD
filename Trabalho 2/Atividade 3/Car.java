@@ -1,5 +1,3 @@
-// Felipe Fernandes Mendonça, 111788
-
 import java.awt.*;
 
 public class Car implements Runnable{
