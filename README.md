@@ -1,3 +1,3 @@
 # Programação Concorrente e Distribuída
 
-Códigos escritos com as bibliotecas PThread e OpenMP para as versões do Jogo da Vida e HighLife.
+Códigos escritos para a disciplina de PCD da UNIFESP-SJC.
