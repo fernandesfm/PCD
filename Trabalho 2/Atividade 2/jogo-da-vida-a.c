@@ -91,7 +91,7 @@ void novaGeracao(){
 int contaPopulacao(){
     int i,j,cont = 0;
     
-    #pragma omp parallel for
+    #pragma omp parallel for num_threads(MAX_THREADS)
         for(i=0;i<TAM; i++){
             for(j = 0; j<TAM; j++){
                 #pragma omp critical(cont)
